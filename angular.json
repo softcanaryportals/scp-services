@@ -91,6 +91,32 @@
           }
         }
       }
+    },
+    "scp-service": {
+      "projectType": "library",
+      "root": "projects/scp-service",
+      "sourceRoot": "projects/scp-service/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/scp-service/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/scp-service/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/scp-service/tsconfig.spec.json"
+          }
+        }
+      }
     }
   }
 }
